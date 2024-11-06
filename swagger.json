@@ -1,0 +1,40 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Improve API",
+      "description": "API for retrieving and managing users",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3001",
+        "description": "Development server"
+      }
+    ],
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "Get list of users",
+          "description": "Retrieves a list of all users in the system",
+          "responses": {
+            "200": {
+              "description": "A JSON array of users",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Users not found"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    }
+  }
