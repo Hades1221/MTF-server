@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 
 
 app.use(passport.initialize());
-app.use(cors());
+app.use(cors({ origin: 'https://mtf-security.netlify.app' }));
 app.use(express.json());
 app.use(Route);
 app.use('/swagger', SwaggerUI.serve, SwaggerUI.setup(swagger));
